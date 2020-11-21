@@ -42,9 +42,15 @@ fn main() {
 
     println!();
 
+
     let ref1 :&Person = pin1.as_ref().get_ref();
     let ref2 = pin1.as_ref().get_ref();
 
     println!("p1: address={:?}, self_ref={:?}", ref1 as * const _, ref1.self_ref);
     println!("p2: address={:?}, self_ref={:?}", ref2 as * const _, ref2.self_ref);
+
+    let mut s = "hello".to_string();
+    let ps = Pin::new(&mut s);
+
+    ps.get_mut();
 }
